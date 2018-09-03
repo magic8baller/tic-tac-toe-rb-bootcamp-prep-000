@@ -67,8 +67,6 @@ end
 end
 
 def won?(board)
-
-  #empty_board = board.all? { |i| i = " " }
   #any returns true if block EVER returns true for any element passed thru it
   WIN_COMBINATIONS.any? do |win_combo|
     #here checks if any possible combos will return true
@@ -107,4 +105,7 @@ def play(board)
     turn(board)
     num_of_turns += 1
   end
+
+  if won?(board)
+    puts "Congratulations #{current_player(board)}!"
 end
